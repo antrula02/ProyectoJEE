@@ -1,0 +1,385 @@
+:root {
+  --negro: #050505;
+  --negro-suave: #111111;
+  --gris: #1c1c1c;
+  --gris-borde: #383838;
+  --rojo: #a40000;
+  --rojo-fuerte: #d10000;
+  --blanco: #f5f5f5;
+  --gris-texto: #c9c9c9;
+  --verde-boton: #7c9800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--negro);
+  color: var(--blanco);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* NAV */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #000;
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--rojo-fuerte);
+}
+
+.btn-reservar {
+  background-color: var(--verde-boton);
+  padding: 12px 18px;
+  font-weight: bold;
+}
+
+.btn-reservar:hover {
+  background-color: #98b500;
+  color: #fff !important;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.88)),
+    url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-content {
+  max-width: 950px;
+  z-index: 2;
+}
+
+.subtitulo {
+  color: #dddddd;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--rojo-fuerte);
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.35);
+  margin-bottom: 20px;
+}
+
+.descripcion {
+  font-size: 1.2rem;
+  color: var(--gris-texto);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.btn-principal {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: 14px 34px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.btn-principal:hover {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+}
+
+/* INTRO */
+.intro-seccion {
+  max-width: 1100px;
+  margin: 70px auto 30px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.intro-seccion h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  color: white;
+  background-color: var(--rojo);
+  padding: 18px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.intro-seccion p {
+  color: var(--gris-texto);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* FORMULARIOS */
+.contenedor-formularios {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto 70px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.96)),
+    url('https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #808080;
+  padding: 40px 30px;
+  min-height: 520px;
+}
+
+.card h3 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.grupo-input {
+  margin-bottom: 24px;
+}
+
+.grupo-input label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grupo-input input {
+  width: 100%;
+  padding: 14px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--rojo);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.grupo-input input::placeholder {
+  color: #888;
+}
+
+.grupo-input input:focus {
+  border-bottom-color: white;
+}
+
+.btn-form {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-form:hover {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+}
+
+.mensaje {
+  margin-top: 20px;
+  min-height: 24px;
+  color: #ffb0b0;
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+/* TABLA */
+.tabla-seccion {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+}
+
+.titulo-tabla h2 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  background-color: var(--rojo);
+  padding: 16px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  border: 2px solid #808080;
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #1a1a1a;
+}
+
+th, td {
+  padding: 18px 15px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+th {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+td {
+  color: #dddddd;
+  font-size: 0.98rem;
+}
+
+tbody tr:hover {
+  background-color: rgba(164, 0, 0, 0.18);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  background-color: #000;
+  color: #9d9d9d;
+  padding: 25px 15px;
+  border-top: 1px solid #222;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .contenedor-formularios {
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 72vh;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .card h3 {
+    font-size: 2.4rem;
+  }
+
+  .intro-seccion h2,
+  .titulo-tabla h2 {
+    font-size: 2rem;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+  }
+
+  .menu a {
+    font-size: 0.9rem;
+  }
+}
