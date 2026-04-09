@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios - Escape Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+  <a href="index.jsp" class="logo-link">
+    <div class="logo">
+      <span class="logo-top">LA CASA DEL</span>
+      <span class="logo-bottom">TERROR</span>
+    </div>
+    </a>
+  </header>
+
+  <main class="comentarios-page">
+    <section class="card">
+      <h2>PUBLICAR COMENTARIO</h2>
+
+      <form id="formComentario">
+        <div class="grupo-input">
+          <label for="nombreComentario">Nombre</label>
+          <input type="text" id="nombreComentario" readonly>
+        </div>
+
+        <div class="grupo-input">
+          <label for="modoComentario">Modo</label>
+          <select id="modoComentario" required>
+            <option value="0">Normal</option>
+            <option value="1">Terror</option>
+          </select>
+        </div>
+
+        <div class="grupo-input">
+          <label for="opinionComentario">Comentario</label>
+          <textarea id="opinionComentario" rows="5" placeholder="Escribe tu opinión..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-form">GUARDAR COMENTARIO</button>
+      </form>
+
+      <div class="mensaje" id="mensajeComentario"></div>
+    </section>
+  </main>
+
+  <script src="comentarios.js"></script>
+</body>
+</html>

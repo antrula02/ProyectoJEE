@@ -1,28 +1,51 @@
 package controller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import dao.DaoUsuario;
+import dao.DaoComentario;
+import modelo.Comentario;
+import modelo.Usuario;
 
 public class TestConexion {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306/escaperoom";
-        String user = "root";
-        String pass = "1234";
+        DaoUsuario nuevoUsuario = new DaoUsuario();
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+        Usuario usuario = nuevoUsuario.validarUsuario("antrula02@gmail.com", "1111");
 
-            Connection con = DriverManager.getConnection(url, user, pass);
+        if (usuario != null) {
+            System.out.println("Login correcto");
 
-            System.out.println("Conexión exitosa 🔥");
+            if (usuario.esAdmin()) {
+                System.out.println("Es admin");
+            } else {
+                System.out.println("No es admin");
+            }
 
-            con.close();
+        } else {
+            System.out.println("Login incorrecto");
+        }
 
-        } catch (Exception e) {
-            System.out.println("Error en la conexión ❌");
-            e.printStackTrace();
+        // PRUEBA COMENTARIO
+        int idUsuario = 1; // Debe existir en la BD
+        String nombre = "Antonio";
+        int modo = 0;
+        String opinion = "Comentario de prueba desde Eclipse";
+
+        // ID y fecha no se pasan porque los genera la BD
+        Comentario comentario = new Comentario();
+        comentario.setIdUsuario(idUsuario);
+        comentario.setNombreUser(nombre);
+        comentario.setModo(modo);
+        comentario.setOpinion(opinion);
+
+        DaoComentario dao = new DaoComentario();
+        boolean ok = dao.insertarComentario(comentario);
+
+        if (ok) {
+            System.out.println("Comentario guardado correctamente en la base de datos");
+        } else {
+            System.out.println("No se pudo guardar el comentario");
         }
     }
 }

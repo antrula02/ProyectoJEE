@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- Fuente estilo terror / fuerte -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -98,39 +97,16 @@
 
     </section>
 
-    <section class="tabla-seccion">
-      <div class="titulo-tabla">
-        <h2>USUARIOS REGISTRADOS</h2>
-      </div>
+   
+<section class="comentarios-seccion">
+  <div class="titulo-tabla">
+    <h2>COMENTARIOS PUBLICADOS</h2>
+  </div>
 
-      <div class="tabla-contenedor">
-        <table>
-          <thead>
-            <tr>
-              <th>ID_USUARIO</th>
-              <th>NOMBRE_USER</th>
-              <th>EMAIL_USER</th>
-              <th>ADMIN</th>
-            </tr>
-          </thead>
-          <tbody id="tablaUsuarios">
-            <tr>
-              <td>1</td>
-              <td>usuario_demo</td>
-              <td>demo@email.com</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>admin_demo</td>
-              <td>admin@email.com</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
+  <div id="listaComentarios" class="lista-comentarios">
+    <p class="sin-comentarios">Cargando comentarios...</p>
+  </div>
+</section>
   </main>
 
   <footer class="footer">
